@@ -1,0 +1,33 @@
+server:
+  error:
+    include-message: always
+
+keycloak:
+  auth-server-url: http://172.22.5.249:8080
+  realm: fit
+  resource: fit
+  public-client: true
+
+restAPI:
+  Username: admin
+  Pass: admin
+  ClientID: admin-cli
+  ClientSecret: o6dRHTYnXE2etICRYPe6rplJXa1VgzcT
+  TokenUrl: http://172.22.5.249:8080/realms/master/protocol/openid-connect/token
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://172.22.5.249:6969/jobmagnet
+    username: postgres
+    password: postgres
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
